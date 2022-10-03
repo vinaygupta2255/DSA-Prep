@@ -17,7 +17,7 @@ class Solution {
 
     //using level order traversal
     public List<Integer> rightSideView1(TreeNode root) {
-        ArrayList<Integer> ans = new ArrayList<Integer>();
+        ArrayList<Integer> ans = new ArrayList<Integer>();//for storing answer
         TreeMap<Integer, Integer> tMap = new TreeMap<Integer, Integer>();
 
         Queue<TreeNode> q = new LinkedList<>();
