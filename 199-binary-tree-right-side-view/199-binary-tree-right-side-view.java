@@ -16,8 +16,8 @@
 class Solution {
 
     //using level order traversal
-    public List<Integer> rightSideView1(TreeNode root) {
-        ArrayList<Integer> ans = new ArrayList<Integer>();//for storing answer
+    public List<Integer> rightSideViewBFS(TreeNode root) {
+        ArrayList<Integer> ans = new ArrayList<Integer>();
         TreeMap<Integer, Integer> tMap = new TreeMap<Integer, Integer>();
 
         Queue<TreeNode> q = new LinkedList<>();
@@ -31,7 +31,7 @@ class Solution {
             if (peek == null) {
                 //purana level complete traverse ho chuka hai
                 level++;
-                
+                //System.out.print("level" + level);
                 //System.out.println("");// enter to next line
                 if (!q.isEmpty()) {
                     //queue still has some child ndoes
@@ -41,8 +41,7 @@ class Solution {
                 if (!tMap.containsKey(level)) {
                     tMap.put(level, peek.val);
                 }
-                
-                // change for right view
+                //System.out.print(peek.val + " "); // change for right view
                 if (peek.right != null) {
                     q.add(peek.right);
                 }
