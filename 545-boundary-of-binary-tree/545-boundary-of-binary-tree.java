@@ -19,11 +19,11 @@ class Solution {
     public List<Integer> boundaryOfBinaryTree(TreeNode root) {
         List<Integer> list = new ArrayList<Integer>();
         
-        if(root == null) // blank root case
+        if(root == null)
             return list;
         list.add(root.val);
         
-        if(root.left == null && root.right == null) // single element case
+        if(root.left == null && root.right == null)
            return list;
         
         leftBoundary(root.left, list);
