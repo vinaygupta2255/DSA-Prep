@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
-     // first sort the array by their starttime, requiredRooms = 1;
-     // traverse from start if end time of i+1 > i then requiredRooms++
+    // Remember the trick of this solution
+    // solve this using Min Heap also i.e. priority Queue
     
         int[] start = new int[intervals.length];
         int[] end = new int[intervals.length];
