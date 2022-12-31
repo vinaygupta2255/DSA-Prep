@@ -118,31 +118,36 @@ class Solution
 {
 	boolean isSumTree(Node root)
 	{
-     int ld, rd;
-     
-     if(root == null || (root.left == null && root.right == null)){
-         return true;
-     }
-     
-     ld = sum(root.left);
-     rd = sum(root.right);
-     
-     if(root.data == ld+rd && isSumTree(root.left) && isSumTree(root.right)){
-         return true;
-         
-     }
-     return false;
+	
+	// BT is sumtree if for each node is equal to its left sum and right sum
+	// assume, if node == null total sum = 0
+	
+	int ld;
+	int rd;
+	
+	if(root == null || (root.left == null && root.right == null))
+	    return true;
+	    
+	    ld = sum(root.left);
+	    rd = sum(root.right);
+	    
+	    if( (root.data == ld+rd) && isSumTree(root.left) && isSumTree(root.right) )
+	    return true;
+	    
+	    return false;
 	}
+	
+	
 	
 	
 	int sum(Node root)
 	{
-     
-     if(root == null){
-         return 0;
-     }
-     
-     return sum(root.left) + root.data + sum(root.right);
+	
+	if(root == null)
+	    return 0;
+	
+	return sum(root.left) + root.data + sum(root.right);
+	
 	}
 	
 }
